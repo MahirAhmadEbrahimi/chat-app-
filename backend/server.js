@@ -10,14 +10,14 @@ const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
     // origin: process.env.FRONTEND_URL || "http://localhost:5173",
-    origin: process.env.FRONTEND_URL || "chatappprojectforusers.netlify.app",
+    origin: process.env.FRONTEND_URL || "https://chatappprojectforusers.netlify.app",
     methods: ["GET", "POST"]
   }
 });
 
 // Middleware
 app.use(cors({
-  origin: process.env.FRONTEND_URL || "http://localhost:5173"
+  origin: process.env.FRONTEND_URL || "https://chatappprojectforusers.netlify.app"
 }));
 app.use(express.json());
 
