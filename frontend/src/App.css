@@ -1,8 +1,11 @@
 /* App Container */
 .app {
+  width: 100%;
+  height: 100vh;
   min-height: 100vh;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
 }
 
 /* Loading */
@@ -304,7 +307,61 @@ button:disabled {
   background: #4caf50;
 }
 
-/* Responsive Design */
+/* Desktop Enhancements - Full Width */
+@media (min-width: 1024px) {
+  .chat-container {
+    width: 100%;
+    height: 100vh;
+    /* Remove any max-width constraints for full screen */
+  }
+
+  .chat-header {
+    padding: 1.5rem 2rem;
+  }
+
+  .chat-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .user-list {
+    width: 350px;
+    min-height: calc(100vh - 80px);
+  }
+
+  .message {
+    max-width: 60%;
+  }
+
+  .message-form {
+    padding: 1.5rem 2rem;
+  }
+
+  .message-input {
+    font-size: 1.1rem;
+    padding: 1rem 1.5rem;
+  }
+
+  .messages-container {
+    padding: 2rem;
+  }
+}
+
+/* Tablet Design */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .user-list {
+    width: 280px;
+  }
+
+  .message {
+    max-width: 70%;
+  }
+
+  .chat-header {
+    padding: 1.25rem 1.5rem;
+  }
+}
+
+/* Mobile Design */
 @media (max-width: 768px) {
   .chat-main {
     flex-direction: column;
@@ -314,6 +371,7 @@ button:disabled {
     width: 100%;
     max-height: 200px;
     overflow-y: auto;
+    order: -1;
   }
 
   .message {
@@ -332,5 +390,13 @@ button:disabled {
     flex-direction: column;
     gap: 0.5rem;
     align-items: flex-end;
+  }
+
+  .message-form {
+    padding: 1rem;
+    position: sticky;
+    bottom: 0;
+    background: white;
+    border-top: 2px solid #eee;
   }
 }
